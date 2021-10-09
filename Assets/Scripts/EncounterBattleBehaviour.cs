@@ -50,8 +50,7 @@ public class EncounterBattleBehaviour : MonoBehaviour
             if (rand <= chanceOfEncounter)
             {
                 // Transition to Battle Scene
-                // NOTE: When battle scene is implemented, use this   SceneManager.LoadScene(battleScene);
-                Debug.Log("Battle Scene Transition");
+                SceneManager.LoadScene(battleScene);
             }
             else
             {
