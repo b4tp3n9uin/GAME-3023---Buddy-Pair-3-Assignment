@@ -7,22 +7,22 @@ public class ButtonScript : MonoBehaviour
 {
     public GameObject CreditsPannel;
 
-    public void OnPlayButtonPressed()
+    public void OnPlayButtonPressed() // Press play
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void OnCreditButtonPressed()
+    public void OnCreditButtonPressed() // Press Credits
     {
         CreditsPannel.SetActive(true);
     }
 
-    public void OnCreditBackButtonPressed()
+    public void OnCreditBackButtonPressed() // Back button for Credits Pannel.
     {
         CreditsPannel.SetActive(false);
     }
 
-    public void OnExitButtonPressed()
+    public void OnExitButtonPressed() // Exit Game
     {
         Application.Quit();
         Debug.Log("Quit");

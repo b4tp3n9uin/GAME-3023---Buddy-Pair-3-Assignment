@@ -28,31 +28,32 @@ public class PlayerBehaviour : MonoBehaviour
     {
         transform.Translate(new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0));
 
-        if (Input.GetAxis("Horizontal") > 0)
+        // When player is moving in certain directions, animation changes.
+        if (Input.GetAxis("Horizontal") > 0) // move right
         {
             direction = PlayerDirection.RIGHT;
             animatior.SetInteger("WalkDirection", (int)direction);
             animatior.SetBool("IsWalking", true);
         }
-        else if (Input.GetAxis("Horizontal") < 0)
+        else if (Input.GetAxis("Horizontal") < 0) // move left
         {
             direction = PlayerDirection.LEFT;
             animatior.SetInteger("WalkDirection", (int)direction);
             animatior.SetBool("IsWalking", true);
         }
-        else if (Input.GetAxis("Vertical") > 0)
+        else if (Input.GetAxis("Vertical") > 0) // move up
         {
             direction = PlayerDirection.BACKWARD;
             animatior.SetInteger("WalkDirection", (int)direction);
             animatior.SetBool("IsWalking", true);
         }
-        else if (Input.GetAxis("Vertical") < 0)
+        else if (Input.GetAxis("Vertical") < 0) // move down
         {
             direction = PlayerDirection.FORWARD;
             animatior.SetInteger("WalkDirection", (int)direction);
             animatior.SetBool("IsWalking", true);
         }
-        else
+        else // idle
         {
             animatior.SetInteger("WalkDirection", (int)direction);
             animatior.SetBool("IsWalking", false);
