@@ -49,6 +49,9 @@ public class EncounterBattleBehaviour : MonoBehaviour
 
             if (rand <= chanceOfEncounter)
             {
+                // Save Player Location
+                player.SavePlayerLocation();
+
                 // Transition to Battle Scene
                 SceneManager.LoadScene(battleScene);
             }

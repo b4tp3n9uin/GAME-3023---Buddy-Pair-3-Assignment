@@ -16,11 +16,17 @@ public class PlayerBehaviour : MonoBehaviour
     public Animator animatior;
     public PlayerDirection direction = PlayerDirection.FORWARD;
 
+    private string playerLocationSaveKey;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Save the name of the save keys
+        playerLocationSaveKey = gameObject.name + "Location";
+
+        // Load Player's Loction
+        LoadPlayerLocation();
     }
 
     // Update is called once per frame
@@ -60,5 +66,33 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    public void SavePlayerLocation()
+    {
+        // Save the Player's location (x, y, z)
+        string playerLocation = "";
+
+        playerLocation += transform.position.x + ",";
+        playerLocation += transform.position.y + ",";
+        playerLocation += transform.position.z + ",";
+
+        PlayerPrefs.SetString(playerLocationSaveKey, playerLocation);
+    }
     
+    private void LoadPlayerLocation()
+    {
+        // Check if the key exists...
+        if (!PlayerPrefs.HasKey(playerLocationSaveKey))
+        {
+            return;
+        }
+
+        // Get saved location
+        string savedLocation = PlayerPrefs.GetString(playerLocationSaveKey, "");
+
+        string[] locationData = savedLocation.Split(',');
+
+        // Set Player's Location
+        transform.localPosition = new Vector3(float.Parse(locationData[0]), float.Parse(locationData[1]), float.Parse(locationData[2]));
+    }
+
 }
