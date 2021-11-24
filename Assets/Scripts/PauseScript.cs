@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
     public GameObject PausePannel;
+    public PlayerBehaviour player;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
-        PausePannel.SetActive(false);
+
+        player = FindObjectOfType<PlayerBehaviour>();
     }
 
     // Function for the Pause button, weather to pause or unpause
@@ -27,6 +29,12 @@ public class PauseScript : MonoBehaviour
             Time.timeScale = 1;
             PausePannel.SetActive(false);
         }
+    }
+
+    public void OnSavePressed()
+    {
+        //Save Player Location.
+        player.SavePlayerLocation();
     }
 
     public void OnMainMenuPressed()

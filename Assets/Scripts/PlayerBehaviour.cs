@@ -18,6 +18,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     private string playerLocationSaveKey;
 
+    // int values to count how much inventory you have.
+    public static int healUse = 5, shieldUse = 5, powerUse = 5, keys = 2;
+
+    // float values for the attack/heal values for the abilities.
+    public static float smlAtk_value = 10, lrgAtk_value = 25, heal_value = 15;
+
+    public TMPro.TextMeshProUGUI keyText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +40,8 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayKeyText();
+
         transform.Translate(new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0));
 
         // When player is moving in certain directions, animation changes.
@@ -93,6 +103,11 @@ public class PlayerBehaviour : MonoBehaviour
 
         // Set Player's Location
         transform.localPosition = new Vector3(float.Parse(locationData[0]), float.Parse(locationData[1]), float.Parse(locationData[2]));
+    }
+
+    void DisplayKeyText()
+    {
+        keyText.text = "Keys: " + keys;
     }
 
 }

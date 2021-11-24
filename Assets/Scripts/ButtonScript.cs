@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class ButtonScript : MonoBehaviour
 {
     public GameObject CreditsPannel;
+    bool isInventoryActive;
+
+    void Start()
+    {
+        isInventoryActive = false;
+    }
 
     public void OnPlayButtonPressed() // Press play
     {
@@ -28,4 +34,16 @@ public class ButtonScript : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit");
     }
+
+    public void OnInvenotryPressed() // Function for the Inventory button and Pannel.
+    {
+        isInventoryActive = !isInventoryActive;
+
+        if (isInventoryActive)
+            CreditsPannel.SetActive(true);
+        else
+            CreditsPannel.SetActive(false);
+
+    }
+    
 }
