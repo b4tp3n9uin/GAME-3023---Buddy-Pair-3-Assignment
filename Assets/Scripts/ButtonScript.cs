@@ -17,8 +17,9 @@ public class ButtonScript : MonoBehaviour
         CreditsPannel.SetActive(true);
     }
 
-    public void OnCreditBackButtonPressed() // Back button for Credits Pannel.
+    public void OnCreditBackButtonPressed() // Back button for Credits and Sign Menus.
     {
+        Time.timeScale = 1.0f;
         CreditsPannel.SetActive(false);
     }
 
