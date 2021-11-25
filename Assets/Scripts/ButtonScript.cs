@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonScript : MonoBehaviour
 {
     public GameObject CreditsPannel;
+    public GameObject HTPPannel;
     bool isInventoryActive;
 
     void Start()
@@ -19,6 +20,16 @@ public class ButtonScript : MonoBehaviour
     }
 
     public void OnCreditButtonPressed() // Press Credits
+    {
+        CreditsPannel.SetActive(true);
+    }
+
+    public void OnHowToPlayButtonPressed() // Press Credits
+    {
+        CreditsPannel.SetActive(true);
+    }
+
+    public void OnHowToPlayBackButtonPressed() // Press Credits
     {
         CreditsPannel.SetActive(true);
     }
