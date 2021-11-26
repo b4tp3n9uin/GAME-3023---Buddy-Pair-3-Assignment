@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
+    //Script for the buttons UI in the Game.
+
     public GameObject CreditsPannel;
-    public GameObject HTPPannel;
     bool isInventoryActive;
 
     void Start()
