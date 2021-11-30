@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7906280199227572023}
   - component: {fileID: 7906280199227572020}
+  - component: {fileID: 1777750555}
   m_Layer: 0
   m_Name: Kai_Battle
   m_TagString: Untagged
@@ -52,6 +53,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1777750555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906280199227572017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f41ef2684b3184e89aacdb33f3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  hpBar: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 90190f0b0d93ebe4ca11976b48de33c6, type: 2}
+  - {fileID: 11400000, guid: 71b970d16b461404a9334d447b8344e9, type: 2}
+  - {fileID: 11400000, guid: e083a7315f9c371419b68775c12c66c8, type: 2}
+  - {fileID: 11400000, guid: f59c18f46393554468cc17782c7182d8, type: 2}
+  attack: 1
+  animator: {fileID: 7906280199227572020}
+  overworldScene: SampleScene
 --- !u!1 &7906280199521295144
 GameObject:
   m_ObjectHideFlags: 0
