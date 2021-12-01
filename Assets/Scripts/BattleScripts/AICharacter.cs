@@ -7,6 +7,9 @@ public class AICharacter : ICharacter
 {
     private PlayerBattleCharacter player;
 
+    [SerializeField]
+    private Animator animator;
+
     protected override void Start()
     {
         // call base start
@@ -18,6 +21,9 @@ public class AICharacter : ICharacter
             if (item.name == "EnemyHPSlider")
                 hpBar = item;
         }
+
+        if (animator == null)
+            animator = GetComponent<Animator>();
     }
 
     public override void TakeTurn(EncounterInstance encounter)
@@ -39,7 +45,7 @@ public class AICharacter : ICharacter
         ability.Cast(this, player);
 
         // Play the animation for that ability
-        // NO ANIMATIONS
+        animator.SetTrigger(ability.name);
 
         encounter.AdvanceTurns(ability);
     }
