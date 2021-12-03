@@ -7,6 +7,9 @@ TagManager:
   - EncounterArea
   - Obstacle
   - Sign
+  - GiantOwl
+  - RagingBull
+  - Vroot
   layers:
   - Default
   - TransparentFX

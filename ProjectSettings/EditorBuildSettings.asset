@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 1c1aee462183677498ccb5374c587672
+  - enabled: 1
+    path: Assets/Scenes/BossSceneGiantOwl.unity
+    guid: 23411e89c028a3b44807f436feec3cb9
+  - enabled: 1
+    path: Assets/Scenes/BossSceneRagingBull.unity
+    guid: 6d70f8eaacb599242bd282c0c3b90968
+  - enabled: 1
+    path: Assets/Scenes/BossSceneVroot.unity
+    guid: e5052d45a9fc39b40be775cce5768f17
   m_configObjects: {}

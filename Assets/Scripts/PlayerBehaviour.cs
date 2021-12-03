@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerDirection
 {
@@ -142,6 +143,18 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             FindObjectOfType<AudioManager>().Play("Hit");
+        }
+        if (other.gameObject.CompareTag("GiantOwl"))
+        {
+            SceneManager.LoadScene("BossSceneGiantOwl");
+        }
+        if (other.gameObject.CompareTag("RagingBull"))
+        {
+            SceneManager.LoadScene("BossSceneRagingBull");
+        }
+        if (other.gameObject.CompareTag("Vroot"))
+        {
+            SceneManager.LoadScene("BossSceneVroot");
         }
     }
 
