@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1777750555, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
+      propertyPath: abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7002152fa89945743a5af3ad632fcf78, type: 2}
     - target: {fileID: 7906280199227572017, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
       propertyPath: m_Name
       value: Player

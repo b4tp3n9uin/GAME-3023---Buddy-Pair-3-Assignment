@@ -17,7 +17,12 @@ public class ButtonScript : MonoBehaviour
 
     public void OnPlayButtonPressed() // Press play
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void OnMainMenuButtonPressed() // Go to Main Menu
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 
     public void OnCreditButtonPressed() // Press Credits

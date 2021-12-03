@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EncounterInstance : MonoBehaviour
 {
@@ -102,6 +103,17 @@ public class EncounterInstance : MonoBehaviour
 
         // Change HP bars
         onHPChange.Invoke(player, enemy);
+
+        if (player.Health <= 0) // Game Over.
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+
+        if (enemy.Health <= 0) // Win Battle.
+        {
+            PlayerBehaviour.keys += Random.RandomRange(1, 3);
+            SceneManager.LoadScene("SampleScene");
+        }
 
         // Set next character's turn
         onCharacterTurnBegin.Invoke(currentCharacterTurn);

@@ -8,6 +8,9 @@ public class TresureScript : MonoBehaviour
     public int upgradeValue;
     public Animator TresAnimator;
 
+    const int MAX_ATK_N_HEAL = 30, // Maximum Value for Small attack and Heal.
+        MAX_POWER_VAL = 40; // Maximum Value for Large Attack.
+
     // This Text will animate and show your Upgrades.
     [Header("Text Animation")]
     public TMPro.TextMeshProUGUI UpgradeText;
@@ -44,6 +47,7 @@ public class TresureScript : MonoBehaviour
             }
             else if (!Open && PlayerBehaviour.keys == 0)
             {
+                FindObjectOfType<AudioManager>().Play("Error");
                 DisplayUpdateText("                     Out of KEYS!");
             }
         }
@@ -58,29 +62,55 @@ public class TresureScript : MonoBehaviour
         if (selected_Abty == 1)
         {
             // Upgrade Small Attack
-            PlayerBehaviour.smlAtk_value += 5;
-            DisplayUpdateText("Upgraded the Power of the Sword!");
+            SmallAtkUpgrade();
         }
         else if (selected_Abty == 2)
         {
             // Upgrade spinach heal and add more uses
-            PlayerBehaviour.healUse += add;
-            PlayerBehaviour.heal_value += 5;
-            DisplayUpdateText("Upgrade on spinach Heal with " + add + " additional uses");
+            HealEatUpgrade(add);
         }
         else if (selected_Abty == 3)
         {
             // Upgrade Power Attack and add more uses.
-            PlayerBehaviour.powerUse += add;
-            PlayerBehaviour.lrgAtk_value += 5;
-            DisplayUpdateText("Upgrade on Power Beam with " + add + " additional uses");
+            LargeAtkUpgrade(add);
         }
         else if (selected_Abty == 4)
         {
-            // Upgrade Aura Shield and add more uses.
-            PlayerBehaviour.shieldUse += add;
-            DisplayUpdateText("Upgrade on Aura with " + add + " additional uses");
+            // Add more uses to Aura Shield.
+            AddAuraShield(add);
         }
+    }
+
+    void SmallAtkUpgrade() // Upgrade Small Attack
+    {
+        if (PlayerBehaviour.smlAtk_value < MAX_ATK_N_HEAL) // Small Attack cannot surpass a value over 30
+            PlayerBehaviour.smlAtk_value += 5;
+
+        DisplayUpdateText("Upgraded the Power of the Sword!");
+    }
+
+    void LargeAtkUpgrade(int use) // Upgrade Power Attack and add more uses.
+    {
+        if (PlayerBehaviour.lrgAtk_value < MAX_POWER_VAL) // Large Attack cannot surpass a value over 40
+            PlayerBehaviour.lrgAtk_value += 5;
+
+        PlayerBehaviour.powerUse += use;
+        DisplayUpdateText("Upgrade on Power Beam with " + use + " additional uses");
+    }
+
+    void HealEatUpgrade(int use) // Upgrade spinach heal and add more uses
+    {
+        if (PlayerBehaviour.heal_value < MAX_ATK_N_HEAL) // Heal cannot surpass a value over 30
+            PlayerBehaviour.heal_value += 5;
+
+        PlayerBehaviour.healUse += use;
+        DisplayUpdateText("Upgrade on spinach Heal with " + use + " additional uses");
+    }
+
+    void AddAuraShield(int use) // Add more uses to Aura Shield.
+    {
+        PlayerBehaviour.shieldUse += use;
+        DisplayUpdateText(use + " additional uses for Aura Shield");
     }
 
     void DisplayUpdateText(string msg)
