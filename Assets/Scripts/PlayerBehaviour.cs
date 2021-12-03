@@ -26,6 +26,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     public TMPro.TextMeshProUGUI keyText;
 
+    public bool OnGrass, isWalking;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,35 +46,57 @@ public class PlayerBehaviour : MonoBehaviour
 
         transform.Translate(new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0));
 
+        IdleWalk();
+    }
+
+    public void IdleWalk()
+    {
         // When player is moving in certain directions, animation changes.
         if (Input.GetAxis("Horizontal") > 0) // move right
         {
+            isWalking = true;
             direction = PlayerDirection.RIGHT;
             animatior.SetInteger("WalkDirection", (int)direction);
-            animatior.SetBool("IsWalking", true);
+            animatior.SetBool("IsWalking", isWalking);
         }
         else if (Input.GetAxis("Horizontal") < 0) // move left
         {
+            isWalking = true;
             direction = PlayerDirection.LEFT;
             animatior.SetInteger("WalkDirection", (int)direction);
-            animatior.SetBool("IsWalking", true);
+            animatior.SetBool("IsWalking", isWalking);
         }
         else if (Input.GetAxis("Vertical") > 0) // move up
         {
+            isWalking = true;
             direction = PlayerDirection.BACKWARD;
             animatior.SetInteger("WalkDirection", (int)direction);
-            animatior.SetBool("IsWalking", true);
+            animatior.SetBool("IsWalking", isWalking);
         }
         else if (Input.GetAxis("Vertical") < 0) // move down
         {
+            isWalking = true;
             direction = PlayerDirection.FORWARD;
             animatior.SetInteger("WalkDirection", (int)direction);
-            animatior.SetBool("IsWalking", true);
+            animatior.SetBool("IsWalking", isWalking);
         }
         else // idle
         {
+            isWalking = false;
+            FindObjectOfType<AudioManager>().Stop("WalkNormal");
+            FindObjectOfType<AudioManager>().Stop("WalkGrass");
             animatior.SetInteger("WalkDirection", (int)direction);
-            animatior.SetBool("IsWalking", false);
+            animatior.SetBool("IsWalking", isWalking);
+        }
+
+        //Loop walk sound
+        if (isWalking && OnGrass)
+        {
+            FindObjectOfType<AudioManager>().LoopSound("WalkGrass");
+        }
+        else if (isWalking && !OnGrass)
+        {
+            FindObjectOfType<AudioManager>().LoopSound("WalkNormal");
         }
     }
 
@@ -108,6 +132,33 @@ public class PlayerBehaviour : MonoBehaviour
     void DisplayKeyText()
     {
         keyText.text = "Keys: " + keys;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            FindObjectOfType<AudioManager>().Play("Hit");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EncounterArea"))
+        {
+            // Walking in Encounter area will make you slower
+            speed = 3;
+            OnGrass = true;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EncounterArea"))
+        {
+            speed = 5;
+            OnGrass = false;
+        }
     }
 
 }

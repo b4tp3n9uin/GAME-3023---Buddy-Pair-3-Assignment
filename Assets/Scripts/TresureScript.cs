@@ -38,6 +38,7 @@ public class TresureScript : MonoBehaviour
                 Open = true;
                 PlayerBehaviour.keys--;
                 Debug.Log("Keys: " + PlayerBehaviour.keys);
+                FindObjectOfType<AudioManager>().Play("Treasure");
                 UpgradeAbilities();
                 TresAnimator.SetBool("IsOpen", Open);
             }
