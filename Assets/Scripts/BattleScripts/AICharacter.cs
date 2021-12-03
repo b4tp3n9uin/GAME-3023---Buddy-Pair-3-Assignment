@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AICharacter : ICharacter
 {
     private PlayerBattleCharacter player;
+    AICharacter enemySelf;
 
     [SerializeField]
     private Animator animator;
@@ -24,6 +25,8 @@ public class AICharacter : ICharacter
 
         if (animator == null)
             animator = GetComponent<Animator>();
+
+        enemySelf = GetComponent<AICharacter>();
     }
 
     public override void TakeTurn(EncounterInstance encounter)
@@ -61,11 +64,18 @@ public class AICharacter : ICharacter
             weights[i] = 0.25f;
         }
 
+        int randSelector = Random.RandomRange(0, abilities.Length);
+        var chosenAbility = abilities[randSelector];
+        
+        // When the Enemy is above 80% health, it will attack because it's most logical ability rather than healing or skiping.
+        if (enemySelf.currentHealth > 80)
+        {
+            chosenAbility = abilities[0];
+
+            return chosenAbility;
+        }
+
         // decide ability to use
-
-        var chosenAbility = abilities[0];
-
         return chosenAbility;
-
     }
 }
