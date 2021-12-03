@@ -53,7 +53,7 @@ public class TresureScript : MonoBehaviour
     {
         // Function for upgrading one of your abilities and and adding more use to one of the abilities
         int selected_Abty = Random.Range(1, 4);
-        int add = Random.Range(1, 3);
+        int add = Random.Range(1, 4);
 
         if (selected_Abty == 1)
         {
