@@ -680,6 +680,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1777750555}
+    - target: {fileID: 1862041663335302059, guid: 459e73d284f06bf489f33d15d6641590, type: 3}
+      propertyPath: onCharacterTurnBegin.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862041663335302059, guid: 459e73d284f06bf489f33d15d6641590, type: 3}
+      propertyPath: onCharacterTurnBegin.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862041663335302059, guid: 459e73d284f06bf489f33d15d6641590, type: 3}
+      propertyPath: onCharacterTurnBegin.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 459e73d284f06bf489f33d15d6641590, type: 3}
 --- !u!1001 &2549825028931637204
@@ -1215,8 +1227,12 @@ PrefabInstance:
       objectReference: {fileID: 1507744042}
     - target: {fileID: 1777750555, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
       propertyPath: attack
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1777750555, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
+      propertyPath: abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7002152fa89945743a5af3ad632fcf78, type: 2}
     - target: {fileID: 7906280199227572017, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
       propertyPath: m_Name
       value: Player

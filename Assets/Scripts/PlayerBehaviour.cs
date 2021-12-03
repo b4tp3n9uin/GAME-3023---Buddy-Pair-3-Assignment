@@ -22,7 +22,10 @@ public class PlayerBehaviour : MonoBehaviour
     public static int healUse = 5, shieldUse = 5, powerUse = 5, keys = 2;
 
     // float values for the attack/heal values for the abilities.
-    public static float smlAtk_value = 10, lrgAtk_value = 25, heal_value = 15;
+    public static float smlAtk_value = 10, lrgAtk_value = 20, heal_value = 15;
+
+    // bool value for the player shield.
+    public static bool isProtected = false;
 
     public TMPro.TextMeshProUGUI keyText;
 

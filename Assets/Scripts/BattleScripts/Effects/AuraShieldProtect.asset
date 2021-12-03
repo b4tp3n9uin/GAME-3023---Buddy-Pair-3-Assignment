@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac7c42c83f7c3944e9fa7875f1c49757, type: 3}
-  m_Name: ScorpionDmg
+  m_Script: {fileID: 11500000, guid: 07399202e55092041a2faed6ade7e2a2, type: 3}
+  m_Name: AuraShieldProtect
   m_EditorClassIdentifier: 
-  damageAmount: 5
-  attack: 3

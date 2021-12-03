@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7c42c83f7c3944e9fa7875f1c49757, type: 3}
   m_Name: CandleDmg
   m_EditorClassIdentifier: 
-  damageAmount: 15
+  damageAmount: 20
+  attack: 3
