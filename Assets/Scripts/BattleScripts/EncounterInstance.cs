@@ -36,6 +36,7 @@ public class EncounterInstance : MonoBehaviour
 
     public UnityEvent<ICharacter, Ability> onCharacterAbilityUsed;
     public UnityEvent<ICharacter, ICharacter> onHPChange;
+    public UnityEvent<Ability> onTriedAbilityOutOfUses;
 
     // Turn counter
     private int turnNumber = 0;
@@ -75,6 +76,11 @@ public class EncounterInstance : MonoBehaviour
         StartCoroutine(turnCoroutine);
 
         turnNumber++;
+    }
+
+    public void UsedAbiliyOutOfUses(Ability abilityUsed)
+    {
+        onTriedAbilityOutOfUses.Invoke(abilityUsed);
     }
 
     IEnumerator HandleTurn(Ability abilityUsed)

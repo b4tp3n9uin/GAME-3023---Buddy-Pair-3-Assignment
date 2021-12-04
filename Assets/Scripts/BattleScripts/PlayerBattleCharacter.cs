@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum ConsumableAbilities
+{
+    MajorAttack = 0,
+    Heal = 2,
+    Shield = 3
+}
+
 public class PlayerBattleCharacter : ICharacter
 {
     private AICharacter opponent;
@@ -36,13 +43,59 @@ public class PlayerBattleCharacter : ICharacter
 
     public void UseAbility(int slot)
     {
-        // Use the ability in the slot
-        abilities[slot].Cast(this, opponent);
+        // Check if ability has uses
+        bool choseUseableAbility = true;
 
-        // Play the animation for that ability
-        animator.SetTrigger(abilities[slot].name);
+        switch (slot)
+        {
+            case (int)ConsumableAbilities.MajorAttack:
 
-        myEncounter.AdvanceTurns(abilities[slot]);
+                if (PlayerBehaviour.powerUse <= 0)
+                {
+                    Debug.Log("No More Power Use");
+                    choseUseableAbility = false;
+                }
+
+                break;
+            case (int)ConsumableAbilities.Heal:
+
+                if (PlayerBehaviour.healUse <= 0)
+                {
+                    Debug.Log("Out of Heal Use!");
+                    choseUseableAbility = false;
+                }
+                break;
+            case (int)ConsumableAbilities.Shield:
+
+                if (PlayerBehaviour.shieldUse <= 0)
+                {
+                    Debug.Log("Out of Heal Use!");
+                    choseUseableAbility = false;
+                }
+                break;
+            default:
+                break;
+        }
+
+        // If the chosen ability has uses
+        if (choseUseableAbility)
+        {
+            // Use the ability in the slot
+            abilities[slot].Cast(this, opponent);
+
+            // Play the animation for that ability
+            animator.SetTrigger(abilities[slot].name);
+
+            // End turn
+            myEncounter.AdvanceTurns(abilities[slot]);
+        }
+        else
+        // If the chosen ability does NOT have uses
+        {
+            // Display to text window that the ability does not have uses, continue player's turn
+            myEncounter.UsedAbiliyOutOfUses(abilities[slot]);
+        }
+
     }
 
     public void Flee()

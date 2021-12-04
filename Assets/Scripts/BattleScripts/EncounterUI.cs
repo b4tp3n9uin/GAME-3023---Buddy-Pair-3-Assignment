@@ -47,6 +47,9 @@ public class EncounterUI : MonoBehaviour
         // On Hp Change, change UI
         encounter.onHPChange.AddListener(AnimateHealthBars);
 
+        // On Player tried to use an ability out of uses
+        encounter.onTriedAbilityOutOfUses.AddListener(AnnounceAbilityOutOfUses);
+
     }
 
     void AnnounceCharacterTurnBegin(ICharacter characterTurn)
@@ -72,6 +75,19 @@ public class EncounterUI : MonoBehaviour
 
         // Start printing out the new message
         animateTextCoroutineRef = AnimateTextCoroutine(characterTurn.name + " used " + abilityUsed.name + "!", timeBetweenCharacters);
+        StartCoroutine(animateTextCoroutineRef);
+    }
+
+    void AnnounceAbilityOutOfUses(Ability ability)
+    {
+        // Stop printing out the current message
+        if (animateTextCoroutineRef != null)
+        {
+            StopCoroutine(animateTextCoroutineRef);
+        }
+
+        // Start printing out the new message
+        animateTextCoroutineRef = AnimateTextCoroutine(ability.name + " is out of uses!", timeBetweenCharacters);
         StartCoroutine(animateTextCoroutineRef);
     }
 

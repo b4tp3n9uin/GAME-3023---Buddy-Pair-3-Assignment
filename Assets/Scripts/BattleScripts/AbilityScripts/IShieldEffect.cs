@@ -7,14 +7,7 @@ public class IShieldEffect : IEffect
 {
     public override void Apply(ICharacter self, ICharacter target)
     {
-        if (PlayerBehaviour.shieldUse <= 0)
-        {
-            Debug.Log("No More Shield Use");
-        }
-        else
-        {
-            PlayerBehaviour.isProtected = true;
-            PlayerBehaviour.shieldUse--;
-        }
+        PlayerBehaviour.isProtected = true;
+        PlayerBehaviour.shieldUse--;
     }
 }

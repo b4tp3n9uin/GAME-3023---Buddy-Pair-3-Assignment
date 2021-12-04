@@ -19,16 +19,9 @@ public class IHealEffect : IEffect
     {
         if (healthType == HealthType.PLAYER)
         {
-            if (PlayerBehaviour.healUse <= 0)
-            {
-                Debug.Log("Out of Heal Use!");
-            }
-            else
-            {
-                healAmount = PlayerBehaviour.heal_value;
-                PlayerBehaviour.healUse--;
-                self.Health += healAmount;
-            }
+            healAmount = PlayerBehaviour.heal_value;
+            PlayerBehaviour.healUse--;
+            self.Health += healAmount;
         }
         else if (healthType == HealthType.ENEMY)
         {

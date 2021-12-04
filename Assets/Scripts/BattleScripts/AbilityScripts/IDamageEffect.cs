@@ -27,17 +27,10 @@ public class IDamageEffect : IEffect
         }
         else if (attack == AttackType.PLAYER_Large)
         {
-            if (PlayerBehaviour.powerUse <= 0)
-            {
-                Debug.Log("No More Power Use");
-            }
-            else
-            {
-                damageAmount = PlayerBehaviour.lrgAtk_value;
-                PlayerBehaviour.powerUse--;
-                target.Health -= (self.Attack * damageAmount);
-            }
-            
+            damageAmount = PlayerBehaviour.lrgAtk_value;
+            PlayerBehaviour.powerUse--;
+            target.Health -= (self.Attack * damageAmount);
+
         }
         else if (attack == AttackType.ENEMY)
         {
