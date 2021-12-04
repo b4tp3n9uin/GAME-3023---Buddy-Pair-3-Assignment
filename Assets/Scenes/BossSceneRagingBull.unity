@@ -1340,7 +1340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330717384955, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330808435769, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_LocalScale.x
@@ -1370,6 +1370,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6695a8e4ee7cf69479eed297736c685e, type: 3}
+    - target: {fileID: 7369288330808435774, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369288330808435774, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369288330808435774, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
 --- !u!1 &7789127566743797521 stripped
@@ -1387,7 +1399,7 @@ Animator:
   m_GameObject: {fileID: 7789127566743797521}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a9cb8a67d1ae6a349b8ceb4b57af38dc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4fba3f6c9403d474d811344a9e081bef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
