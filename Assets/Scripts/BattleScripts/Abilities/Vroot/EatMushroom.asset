@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 898fe7c5ed50be64b8d023b985c927c0, type: 3}
-  m_Name: GO_Scream
+  m_Name: EatMushroom
   m_EditorClassIdentifier: 
   name: 
   description: 
   effects:
-  - {fileID: 11400000, guid: 133c4f468c0594e49a2c54155bf7cc9e, type: 2}
+  - {fileID: 11400000, guid: 8630abb78ede01043b5c84b89da456c2, type: 2}
