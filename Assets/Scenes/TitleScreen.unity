@@ -1263,7 +1263,8 @@ MonoBehaviour:
     Attack (Sword), Major Attack \n  (Beam), Aura Shield (Protection), and Eat Spinach
     (Heal).\n\n* Small Enemies can only attack, skip turns, and heal themselves.\n  
     Bosses have the same number of abilities as you, and are much smarter.\n\n* Beams,
-    Shield, and Spinach have limited number of uses, and sword has\n  unlimited uses.\n"
+    Shield, and Spinach have limited number of uses, and sword has\n  unlimited uses.
+    So select your abilities CAREFULLY!!!\n"
 --- !u!222 &692114469
 CanvasRenderer:
   m_ObjectHideFlags: 0

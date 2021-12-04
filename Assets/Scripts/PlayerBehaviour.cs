@@ -20,7 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     private string playerLocationSaveKey;
 
     // int values to count how much inventory you have.
-    public static int healUse = 5, shieldUse = 5, powerUse = 5, keys = 2;
+    public static int healUse = 5, shieldUse = 5, powerUse = 5, keys = 2, bosses = 3;
 
     // float values for the attack/heal values for the abilities.
     public static float smlAtk_value = 10, lrgAtk_value = 20, heal_value = 15;
@@ -28,10 +28,14 @@ public class PlayerBehaviour : MonoBehaviour
     // bool value for the player shield.
     public static bool isProtected = false;
 
-    public TMPro.TextMeshProUGUI keyText;
+    public TMPro.TextMeshProUGUI keyText, bossText;
 
     public bool OnGrass, isWalking;
 
+    [Header("Bosses")]
+    public GameObject GiantOwl;
+    public GameObject RagingBull;
+    public GameObject Vroot;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,8 @@ public class PlayerBehaviour : MonoBehaviour
 
         // Load Player's Loction
         LoadPlayerLocation();
+
+        CheckBossCount();
     }
 
     // Update is called once per frame
@@ -136,6 +142,7 @@ public class PlayerBehaviour : MonoBehaviour
     void DisplayKeyText()
     {
         keyText.text = "Keys: " + keys;
+        bossText.text = "Boss Left: " + bosses;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -174,6 +181,31 @@ public class PlayerBehaviour : MonoBehaviour
         {
             speed = 5;
             OnGrass = false;
+        }
+    }
+
+    void CheckBossCount()
+    {
+        if (bosses <= 0)
+            bosses = 3;
+
+        if (bosses == 2)
+        {
+            GiantOwl.SetActive(false);
+            RagingBull.SetActive(true);
+            Vroot.SetActive(true);
+        }
+        else if (bosses == 1)
+        {
+            GiantOwl.SetActive(false);
+            RagingBull.SetActive(false);
+            Vroot.SetActive(true);
+        }
+        else
+        {
+            GiantOwl.SetActive(true);
+            RagingBull.SetActive(true);
+            Vroot.SetActive(true);
         }
     }
 

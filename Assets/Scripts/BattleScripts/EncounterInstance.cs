@@ -111,8 +111,14 @@ public class EncounterInstance : MonoBehaviour
 
         if (enemy.Health <= 0) // Win Battle.
         {
-            PlayerBehaviour.keys += Random.RandomRange(1, 3);
-            SceneManager.LoadScene("SampleScene");
+            if (PlayerBehaviour.bosses == 0)
+                SceneManager.LoadScene("WinScene");
+            else
+            {
+                PlayerBehaviour.keys += Random.RandomRange(1, 3);
+                SceneManager.LoadScene("SampleScene");
+            }
+            
         }
 
         // Set next character's turn

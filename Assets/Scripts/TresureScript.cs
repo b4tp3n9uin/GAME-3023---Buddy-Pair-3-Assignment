@@ -56,7 +56,7 @@ public class TresureScript : MonoBehaviour
     void UpgradeAbilities()
     {
         // Function for upgrading one of your abilities and and adding more use to one of the abilities
-        int selected_Abty = Random.Range(1, 4);
+        int selected_Abty = Random.Range(1, 5);
         int add = Random.Range(1, 4);
 
         if (selected_Abty == 1)
@@ -78,6 +78,10 @@ public class TresureScript : MonoBehaviour
         {
             // Add more uses to Aura Shield.
             AddAuraShield(add);
+        }
+        else
+        {
+            LargeAtkUpgrade(add);
         }
     }
 
