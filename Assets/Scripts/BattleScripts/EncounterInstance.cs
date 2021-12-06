@@ -83,6 +83,11 @@ public class EncounterInstance : MonoBehaviour
         onTriedAbilityOutOfUses.Invoke(abilityUsed);
     }
 
+    public void UpdateHealthBars()
+    {
+        onHPChange.Invoke(Player, Enemy);
+    }
+
     IEnumerator HandleTurn(Ability abilityUsed)
     {
         // Character uses ability
@@ -108,7 +113,7 @@ public class EncounterInstance : MonoBehaviour
         }
 
         // Change HP bars
-        onHPChange.Invoke(player, enemy);
+        UpdateHealthBars();
 
         if (player.Health <= 0) // Game Over.
         {
@@ -117,6 +122,8 @@ public class EncounterInstance : MonoBehaviour
 
         if (enemy.Health <= 0) // Win Battle.
         {
+            player.SaveHealth();
+
             if (PlayerBehaviour.bosses == 0)
                 SceneManager.LoadScene("WinScene");
             else

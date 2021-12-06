@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public abstract class ICharacter : MonoBehaviour
 {
     [Header("Health")]
+    [SerializeField]
     protected float currentHealth;
 
     public float Health
@@ -61,13 +62,8 @@ public abstract class ICharacter : MonoBehaviour
 
     public abstract void TakeTurn(EncounterInstance encounter);
 
-    public void InitHealth()
+    protected virtual void Awake()
     {
-        currentHealth = maxHealth;
-    }
-
-    protected virtual void Start()
-    {
-        InitHealth();
+        
     }
 }

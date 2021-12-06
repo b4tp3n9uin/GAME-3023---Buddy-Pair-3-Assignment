@@ -189,6 +189,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548943821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4053140648361097411, guid: f9e1de836c6bd8f418b6e9a450a78af3, type: 3}
+  m_PrefabInstance: {fileID: 711939254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &711939254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 1777750555, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
       propertyPath: hpBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1446875202}
     - target: {fileID: 1777750555, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
       propertyPath: abilities.Array.data[3]
       value: 
@@ -729,6 +740,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80af812914b096f46bbb062ac1892208, type: 3}
+--- !u!114 &1446875202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4053140647331551499, guid: f9e1de836c6bd8f418b6e9a450a78af3, type: 3}
+  m_PrefabInstance: {fileID: 711939254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1466067286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8dfd99caa1dcd0a43ac1262ed42fbcd3, type: 3}
+    - target: {fileID: 4616754306933339106, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 548943821}
     - target: {fileID: 4616754306933339106, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: abilities.Array.size
       value: 4
