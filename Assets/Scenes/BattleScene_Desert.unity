@@ -1405,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
     - target: {fileID: 7369288330045194273, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Scorpion
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330045194279, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_RootOrder
@@ -1553,3 +1553,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7789127566743797523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789127566743797521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b1d2159bf23844ca679eb14c86f6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectClips:
+  - {fileID: 8300000, guid: 4420ed6932bf0984a86a84c54d74dced, type: 3}
+  - {fileID: 8300000, guid: 79fa3cda97dc38e42965e0723e6536bb, type: 3}
+  availableSources: 1

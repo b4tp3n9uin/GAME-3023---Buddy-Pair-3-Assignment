@@ -1437,7 +1437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4616754305458103097, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4616754305633228795, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: m_LocalScale.x
@@ -1477,7 +1477,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
     - target: {fileID: 4616754306933339107, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 4616754306933339109, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: m_RootOrder
@@ -1549,3 +1549,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5354343885454177116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354343885454177114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b1d2159bf23844ca679eb14c86f6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectClips:
+  - {fileID: 8300000, guid: 21d229c7e72480a46aaa6717d684b9c6, type: 3}
+  - {fileID: 8300000, guid: 79fa3cda97dc38e42965e0723e6536bb, type: 3}
+  availableSources: 1

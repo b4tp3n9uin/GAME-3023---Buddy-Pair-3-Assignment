@@ -37,6 +37,7 @@ public class EncounterInstance : MonoBehaviour
     public UnityEvent<ICharacter, Ability> onCharacterAbilityUsed;
     public UnityEvent<ICharacter, ICharacter> onHPChange;
     public UnityEvent<Ability> onTriedAbilityOutOfUses;
+    public UnityEvent<ICharacter> onWinBattle;
 
     // Turn counter
     private int turnNumber = 0;
@@ -124,20 +125,17 @@ public class EncounterInstance : MonoBehaviour
 
         if (enemy.Health <= 0) // Win Battle.
         {
+            // Save Player's Health
             player.SaveHealth();
 
-            if (PlayerBehaviour.bosses == 0)
-                SceneManager.LoadScene("WinScene");
-            else
-            {
-                PlayerBehaviour.keys += Random.RandomRange(1, 3);
-                SceneManager.LoadScene("SampleScene");
-            }
-            
+            // Trigger on Win battle event
+            onWinBattle.Invoke(enemy);
         }
-
-        // Set next character's turn
-        onCharacterTurnBegin.Invoke(currentCharacterTurn);
-        currentCharacterTurn.TakeTurn(this);
+        else
+        {
+            // Set next character's turn
+            onCharacterTurnBegin.Invoke(currentCharacterTurn);
+            currentCharacterTurn.TakeTurn(this);
+        }
     }
 }

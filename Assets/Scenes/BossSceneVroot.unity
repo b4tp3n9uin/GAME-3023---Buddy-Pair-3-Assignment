@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7906280199899590635, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fc7b88cf50a9ac448c24fac4133a61f, type: 3}
 --- !u!1001 &1180020936
@@ -1509,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 45fa7122928d04f4fba581ab01ea3b3c, type: 2}
     - target: {fileID: 4616754306933339107, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Vroot
       objectReference: {fileID: 0}
     - target: {fileID: 4616754306933339109, guid: 130f1378dedd08b4e93917b96ea64d20, type: 3}
       propertyPath: m_RootOrder
@@ -1593,3 +1597,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2b5e26acb6854abf8fbe4d004e649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5354343885454177117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354343885454177114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b1d2159bf23844ca679eb14c86f6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectClips:
+  - {fileID: 8300000, guid: 644852eea4036214cbb2f4638531241f, type: 3}
+  - {fileID: 8300000, guid: 118e633c238102644a72ea36441fe4b2, type: 3}
+  - {fileID: 8300000, guid: 7aaec84078b2d1b44a3fade5e2dbc7f0, type: 3}
+  - {fileID: 8300000, guid: 9e5e5fc9ebc6e154db631242bd8aaa29, type: 3}
+  availableSources: 3

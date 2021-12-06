@@ -6176,7 +6176,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 746598020229643650, guid: 37543665baed7f04893f895604676ce8, type: 3}
       propertyPath: m_Name
-      value: Owl
+      value: Giant Owl
       objectReference: {fileID: 0}
     - target: {fileID: 746598020229643651, guid: 37543665baed7f04893f895604676ce8, type: 3}
       propertyPath: hpBar
@@ -6312,7 +6312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746598021707197784, guid: 37543665baed7f04893f895604676ce8, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 746598021707197785, guid: 37543665baed7f04893f895604676ce8, type: 3}
       propertyPath: m_LocalScale.x
@@ -6386,6 +6386,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1932736411}
+--- !u!114 &6708019117198392728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708019117198392723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b1d2159bf23844ca679eb14c86f6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectClips:
+  - {fileID: 8300000, guid: eb16b2aaee0334847b1df930271255b5, type: 3}
+  - {fileID: 8300000, guid: 644852eea4036214cbb2f4638531241f, type: 3}
+  - {fileID: 8300000, guid: c17197a8156a18a47a7a1a1d77354d19, type: 3}
+  availableSources: 2
 --- !u!1001 &7906280199364611762
 PrefabInstance:
   m_ObjectHideFlags: 0
