@@ -46,7 +46,7 @@ public class AICharacter : ICharacter
 
         // Play the animation for that ability
         animator.SetTrigger(ability.name);
-
+        
         encounter.AdvanceTurns(ability);
     }
 

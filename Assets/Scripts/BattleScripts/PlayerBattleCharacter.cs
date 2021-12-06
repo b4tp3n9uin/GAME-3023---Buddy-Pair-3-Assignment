@@ -72,7 +72,7 @@ public class PlayerBattleCharacter : ICharacter
 
                 if (PlayerBehaviour.shieldUse <= 0)
                 {
-                    Debug.Log("Out of Heal Use!");
+                    Debug.Log("Out of Shield Use!");
                     choseUseableAbility = false;
                 }
                 break;

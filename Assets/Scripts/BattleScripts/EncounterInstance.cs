@@ -117,6 +117,8 @@ public class EncounterInstance : MonoBehaviour
 
         if (player.Health <= 0) // Game Over.
         {
+            player.Health = 100;
+            player.SaveHealth();
             SceneManager.LoadScene("GameOverScene");
         }
 
