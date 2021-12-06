@@ -988,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 658206737731176212, guid: e4d380e2fe95463468e927e6af1cdc7a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 658206737731176212, guid: e4d380e2fe95463468e927e6af1cdc7a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2549825029583042829, guid: e4d380e2fe95463468e927e6af1cdc7a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2549825029583042829, guid: e4d380e2fe95463468e927e6af1cdc7a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -1651,6 +1651,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8129758543987779439, guid: c4ec052628d91ee4ab9d301b79b49862, type: 3}
+      propertyPath: m_text
+      value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129758543987779439, guid: c4ec052628d91ee4ab9d301b79b49862, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129758544024789048, guid: c4ec052628d91ee4ab9d301b79b49862, type: 3}
+      propertyPath: m_text
+      value: 'Kai
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129758544024789048, guid: c4ec052628d91ee4ab9d301b79b49862, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8129758544876741658, guid: c4ec052628d91ee4ab9d301b79b49862, type: 3}
       propertyPath: m_Pivot.x
       value: 0

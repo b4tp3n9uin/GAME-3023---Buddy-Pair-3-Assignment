@@ -70,10 +70,10 @@ MonoBehaviour:
   maxHealth: 100
   hpBar: {fileID: 0}
   abilities:
-  - {fileID: 11400000, guid: 90190f0b0d93ebe4ca11976b48de33c6, type: 2}
   - {fileID: 11400000, guid: 71b970d16b461404a9334d447b8344e9, type: 2}
+  - {fileID: 11400000, guid: 90190f0b0d93ebe4ca11976b48de33c6, type: 2}
   - {fileID: 11400000, guid: e083a7315f9c371419b68775c12c66c8, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 7002152fa89945743a5af3ad632fcf78, type: 2}
   attack: 1
   animator: {fileID: 7906280199227572020}
   overworldScene: SampleScene
