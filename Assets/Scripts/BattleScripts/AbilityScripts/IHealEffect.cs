@@ -26,7 +26,6 @@ public class IHealEffect : IEffect
         else if (healthType == HealthType.ENEMY)
         {
             self.Health += healAmount;
-            PlayerBehaviour.isProtected = false;
         }
     }
 }
