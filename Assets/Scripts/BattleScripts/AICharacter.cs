@@ -11,11 +11,8 @@ public class AICharacter : ICharacter
     [SerializeField]
     private Animator animator;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        // call base start
-        base.Start();
-
         var list = FindObjectsOfType<Slider>();
         foreach (var item in list)
         {

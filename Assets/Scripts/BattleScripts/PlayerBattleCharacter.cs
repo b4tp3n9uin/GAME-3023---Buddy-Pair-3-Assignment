@@ -21,17 +21,18 @@ public class PlayerBattleCharacter : ICharacter
 
     public string overworldScene = "GameScene";
 
-    protected void Start()
-    {
-        // call base start
-        base.Start();
+    private string playerHealthSaveKey = "PlayerHealth";
 
+    protected override void Awake()
+    {
         var list = FindObjectsOfType<Slider>();
         foreach (var item in list)
         {
             if (item.name == "PlayerHPSlider")
                 hpBar = item;
         }
+
+        LoadHealth();
     }
 
     public override void TakeTurn(EncounterInstance encounter)
@@ -39,6 +40,8 @@ public class PlayerBattleCharacter : ICharacter
         opponent = encounter.Enemy;
         myEncounter = encounter;
         Debug.Log("Player Taking turn");
+
+        encounter.UpdateHealthBars();
     }
 
     public void UseAbility(int slot)
@@ -98,8 +101,34 @@ public class PlayerBattleCharacter : ICharacter
 
     }
 
+    public void SaveHealth()
+    {
+        // Save the Player's health
+        string saveHealth = Health + "";
+
+        PlayerPrefs.SetString(playerHealthSaveKey, saveHealth);
+    }
+
+    public void LoadHealth()
+    {
+        // Check if the key exists...
+        if (!PlayerPrefs.HasKey(playerHealthSaveKey))
+        {
+            return;
+        }
+
+        // Get saved health
+        string saveHealth = PlayerPrefs.GetString(playerHealthSaveKey, "");
+
+        // Set Player's health
+        Health = float.Parse(saveHealth);
+    }
+
     public void Flee()
     {
+        // Save Health
+        SaveHealth();
+
         // Load the overworld scene
         SceneManager.LoadScene(overworldScene);
     }

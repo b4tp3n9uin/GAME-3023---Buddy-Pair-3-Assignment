@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe04f88b03c2bfb4ca55a4bb9385a4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 100
   maxHealth: 100
   hpBar: {fileID: 0}
   abilities:
   - {fileID: 11400000, guid: 4e33c4c8a61fa49459554a86d3738730, type: 2}
   attack: 1
+  animator: {fileID: 0}
 --- !u!1 &746598021597108635
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,13 +65,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f41ef2684b3184e89aacdb33f3bdc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 100
   maxHealth: 100
   hpBar: {fileID: 0}
   abilities:
   - {fileID: 11400000, guid: 90190f0b0d93ebe4ca11976b48de33c6, type: 2}
   - {fileID: 11400000, guid: 71b970d16b461404a9334d447b8344e9, type: 2}
   - {fileID: 11400000, guid: e083a7315f9c371419b68775c12c66c8, type: 2}
-  - {fileID: 11400000, guid: f59c18f46393554468cc17782c7182d8, type: 2}
+  - {fileID: 0}
   attack: 1
   animator: {fileID: 7906280199227572020}
   overworldScene: SampleScene

@@ -153,14 +153,17 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (other.gameObject.CompareTag("GiantOwl"))
         {
+            SavePlayerLocation();
             SceneManager.LoadScene("BossSceneGiantOwl");
         }
         if (other.gameObject.CompareTag("RagingBull"))
         {
+            SavePlayerLocation();
             SceneManager.LoadScene("BossSceneRagingBull");
         }
         if (other.gameObject.CompareTag("Vroot"))
         {
+            SavePlayerLocation();
             SceneManager.LoadScene("BossSceneVroot");
         }
     }
