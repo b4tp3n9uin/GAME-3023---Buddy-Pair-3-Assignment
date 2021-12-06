@@ -170,19 +170,16 @@ public class PlayerBehaviour : MonoBehaviour
         // Go into Battle with Boss.
         if (other.gameObject.CompareTag("GiantOwl"))
         {
-            SavePlayerLocation();
             SceneManager.LoadScene("BossSceneGiantOwl");
             SavePlayerLocation(0.0f, YdistanceAway);
         }
         if (other.gameObject.CompareTag("RagingBull"))
         {
-            SavePlayerLocation();
             SceneManager.LoadScene("BossSceneRagingBull");
             SavePlayerLocation(0.0f,YdistanceAway);
         }
         if (other.gameObject.CompareTag("Vroot"))
         {
-            SavePlayerLocation();
             SceneManager.LoadScene("BossSceneVroot");
             SavePlayerLocation(XdistanceAway, 0.0f);
         }
