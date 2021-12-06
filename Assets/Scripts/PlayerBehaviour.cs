@@ -46,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour
         // Load Player's Loction
         LoadPlayerLocation();
 
+        // Display the number of remaining bosses left.
         CheckBossCount();
     }
 
@@ -110,13 +111,13 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    public void SavePlayerLocation()
+    public void SavePlayerLocation(float XDisAway, float YDisAway)
     {
         // Save the Player's location (x, y, z)
         string playerLocation = "";
 
-        playerLocation += transform.position.x + ",";
-        playerLocation += transform.position.y + ",";
+        playerLocation += (transform.position.x + XDisAway) + ",";
+        playerLocation += (transform.position.y + YDisAway) + ",";
         playerLocation += transform.position.z + ",";
 
         PlayerPrefs.SetString(playerLocationSaveKey, playerLocation);
@@ -151,18 +152,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("Hit");
         }
-        if (other.gameObject.CompareTag("GiantOwl"))
-        {
-            SceneManager.LoadScene("BossSceneGiantOwl");
-        }
-        if (other.gameObject.CompareTag("RagingBull"))
-        {
-            SceneManager.LoadScene("BossSceneRagingBull");
-        }
-        if (other.gameObject.CompareTag("Vroot"))
-        {
-            SceneManager.LoadScene("BossSceneVroot");
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -172,6 +162,26 @@ public class PlayerBehaviour : MonoBehaviour
             // Walking in Encounter area will make you slower
             speed = 3;
             OnGrass = true;
+        }
+
+        float XdistanceAway = -3.5f;
+        float YdistanceAway = -5.0f; // float value for the Distance away from boss, so you don't constantly collide and go to battle scene.
+
+        // Go into Battle with Boss.
+        if (other.gameObject.CompareTag("GiantOwl"))
+        {
+            SceneManager.LoadScene("BossSceneGiantOwl");
+            SavePlayerLocation(0.0f, YdistanceAway);
+        }
+        if (other.gameObject.CompareTag("RagingBull"))
+        {
+            SceneManager.LoadScene("BossSceneRagingBull");
+            SavePlayerLocation(0.0f,YdistanceAway);
+        }
+        if (other.gameObject.CompareTag("Vroot"))
+        {
+            SceneManager.LoadScene("BossSceneVroot");
+            SavePlayerLocation(XdistanceAway, 0.0f);
         }
     }
     
@@ -207,6 +217,12 @@ public class PlayerBehaviour : MonoBehaviour
             RagingBull.SetActive(true);
             Vroot.SetActive(true);
         }
+    }
+
+    public void OnResetPositionToStartButtonPressed() // Resets the Player to his  origin Location.
+    {
+        Vector3 OriginPosition = new Vector3(-1.0f, 0.0f, 0.0f);
+        transform.localPosition = OriginPosition;
     }
 
 }

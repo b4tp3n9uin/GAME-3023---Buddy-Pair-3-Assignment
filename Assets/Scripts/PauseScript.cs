@@ -34,7 +34,7 @@ public class PauseScript : MonoBehaviour
     public void OnSavePressed()
     {
         //Save Player Location.
-        player.SavePlayerLocation();
+        player.SavePlayerLocation(0.0f, 0.0f);
     }
 
     public void OnMainMenuPressed()
