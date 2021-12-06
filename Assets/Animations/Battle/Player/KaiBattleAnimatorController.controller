@@ -134,13 +134,13 @@ AnimatorController:
   m_Name: KaiBattleAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: MinorAttack
+  - m_Name: SwordAttack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: MajorAttack
+  - m_Name: PowerBeam
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -180,7 +180,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: MinorAttack
+    m_ConditionEvent: SwordAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4416365512638315562}
@@ -269,7 +269,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: MajorAttack
+    m_ConditionEvent: PowerBeam
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2819363625625650712}

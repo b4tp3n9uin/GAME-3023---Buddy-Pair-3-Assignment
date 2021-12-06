@@ -347,9 +347,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6577636792866317981, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_fontSize
+      value: 31.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577636793131578273, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_Name
+      value: Power Beam
+      objectReference: {fileID: 0}
     - target: {fileID: 6577636793131578287, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144990825716926490, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_fontSize
+      value: 34.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144990825770129540, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_fontSize
+      value: 31.65
       objectReference: {fileID: 0}
     - target: {fileID: 8144990825941146701, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -359,6 +375,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8144990827536762918, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_fontSize
+      value: 31.55
+      objectReference: {fileID: 0}
     - target: {fileID: 8144990827599355176, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -366,6 +386,14 @@ PrefabInstance:
     - target: {fileID: 8144990827646258614, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144990827646258616, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_Name
+      value: Sword Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144990827827562879, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}
+      propertyPath: m_fontSize
+      value: 42.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea396dd4ccdcfb4c9525533cb912fb3, type: 3}

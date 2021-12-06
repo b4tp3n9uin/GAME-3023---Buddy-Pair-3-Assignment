@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum ConsumableAbilities
 {
-    MajorAttack = 0,
+    PowerBeam = 0,
     Heal = 2,
     Shield = 3
 }
@@ -51,7 +51,7 @@ public class PlayerBattleCharacter : ICharacter
 
         switch (slot)
         {
-            case (int)ConsumableAbilities.MajorAttack:
+            case (int)ConsumableAbilities.PowerBeam:
 
                 if (PlayerBehaviour.powerUse <= 0)
                 {

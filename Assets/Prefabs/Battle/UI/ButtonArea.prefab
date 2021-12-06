@@ -49,11 +49,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_text
-      value: Minor Attack
+      value: Sword Attack
       objectReference: {fileID: 0}
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_fontSize
-      value: 29
+      value: 29.9
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724532, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_Pivot.x
@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724539, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_Name
-      value: Minor Attack
+      value: Sword Attack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
@@ -187,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_fontSize
-      value: 31.25
+      value: 34.05
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724532, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_Pivot.x
@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_fontSize
-      value: 39.7
+      value: 42.05
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724532, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_Pivot.x
@@ -451,7 +451,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_fontSize
-      value: 34.4
+      value: 31.55
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724532, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_Pivot.x
@@ -569,11 +569,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_text
-      value: Major Attack
+      value: Power Beam
       objectReference: {fileID: 0}
     - target: {fileID: 3044617862404655047, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_fontSize
-      value: 28.95
+      value: 30.7
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724532, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_RootOrder
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044617863739724539, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
       propertyPath: m_Name
-      value: Major Attack
+      value: Power Beam
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01c7f2340ba198a47ba9cffda8de3006, type: 3}
