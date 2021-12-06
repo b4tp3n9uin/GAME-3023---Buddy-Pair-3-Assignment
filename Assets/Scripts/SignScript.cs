@@ -24,9 +24,6 @@ public class SignScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<AudioManager>().Stop("WalkNormal");
-            FindObjectOfType<AudioManager>().Stop("WalkGrass");
-
             // Display Info Message about the World.
             Time.timeScale = 0.0f;
             Debug.Log("Entered");

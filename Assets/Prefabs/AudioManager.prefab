@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2986745067134163568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2986745067134163567}
+  - component: {fileID: 2986745067134163566}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2986745067134163567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986745067134163568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3849493, y: -0.486067, z: -173.06699}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2986745067134163566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986745067134163568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64320d88be7190a42b75c9b933c73357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SignPop
+    clip: {fileID: 8300000, guid: 01270f95001f24d4aabc644e9073590a, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Treasure
+    clip: {fileID: 8300000, guid: afce651e39b7ef44eaa1f91e237bae42, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 17cbca7bbbae22944bdf3a0882e9e864, type: 3}
+    loop: 0
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: WalkNormal
+    clip: {fileID: 8300000, guid: d4e968819c364f94a9e67538fa9524e2, type: 3}
+    loop: 1
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: WalkGrass
+    clip: {fileID: 8300000, guid: bb1f9fc3e557c47499b8dde73ab886f9, type: 3}
+    loop: 1
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Error
+    clip: {fileID: 8300000, guid: 76fd3a1ae76e7274c924665c166d220b, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Select
+    clip: {fileID: 8300000, guid: 31ccbd6881766ec4caf38cf91bf15433, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Pause
+    clip: {fileID: 8300000, guid: 3256fedbda6b10a498302209136406d4, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Back
+    clip: {fileID: 8300000, guid: 0a38a2c50dca0164faa7ae2738b18d7b, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
