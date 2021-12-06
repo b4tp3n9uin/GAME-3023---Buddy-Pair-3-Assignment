@@ -1244,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 49b5aded6ccaeba42a8e167d24499d20, type: 2}
     - target: {fileID: 7369288330045194273, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Raging Bull
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330045194279, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_RootOrder

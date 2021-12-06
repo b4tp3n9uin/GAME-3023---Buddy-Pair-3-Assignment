@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Will prompt the user what to do, and enable/disable UI elements at different times
 public class EncounterUI : MonoBehaviour
@@ -50,35 +51,26 @@ public class EncounterUI : MonoBehaviour
         // On Player tried to use an ability out of uses
         encounter.onTriedAbilityOutOfUses.AddListener(AnnounceAbilityOutOfUses);
 
+        // On Battle Won, display the defeated enemy
+        encounter.onWinBattle.AddListener(AnnounceBattleOver);
     }
 
     void AnnounceCharacterTurnBegin(ICharacter characterTurn)
     {
-        // Stop printing out the current message
-        if (animateTextCoroutineRef != null)
-        {
-            StopCoroutine(animateTextCoroutineRef);
-        }
-
-        // Start printing out the new message
-        animateTextCoroutineRef = AnimateTextCoroutine("It is the " + characterTurn.name + "'s turn.", timeBetweenCharacters);
-        StartCoroutine(animateTextCoroutineRef);
+        AnimateText("It is the " + characterTurn.name + "'s turn.");
     }
 
     void AnnounceCharacterAbilityUsed(ICharacter characterTurn, Ability abilityUsed)
     {
-        // Stop printing out the current message
-        if (animateTextCoroutineRef != null)
-        {
-            StopCoroutine(animateTextCoroutineRef);
-        }
-
-        // Start printing out the new message
-        animateTextCoroutineRef = AnimateTextCoroutine(characterTurn.name + " used " + abilityUsed.name + "!", timeBetweenCharacters);
-        StartCoroutine(animateTextCoroutineRef);
+        AnimateText(characterTurn.name + " used " + abilityUsed.name + "!");
     }
 
     void AnnounceAbilityOutOfUses(Ability ability)
+    {
+        AnimateText(ability.name + " is out of uses!");
+    }
+
+    void AnnounceBattleOver(ICharacter enemy)
     {
         // Stop printing out the current message
         if (animateTextCoroutineRef != null)
@@ -87,7 +79,20 @@ public class EncounterUI : MonoBehaviour
         }
 
         // Start printing out the new message
-        animateTextCoroutineRef = AnimateTextCoroutine(ability.name + " is out of uses!", timeBetweenCharacters);
+        animateTextCoroutineRef = BattleWonCoroutine(enemy.name + " was defeated!", timeBetweenCharacters);
+        StartCoroutine(animateTextCoroutineRef);
+    }
+
+    void AnimateText(string msg)
+    {
+        // Stop printing out the current message
+        if (animateTextCoroutineRef != null)
+        {
+            StopCoroutine(animateTextCoroutineRef);
+        }
+
+        // Start printing out the new message
+        animateTextCoroutineRef = AnimateTextCoroutine(msg, timeBetweenCharacters);
         StartCoroutine(animateTextCoroutineRef);
     }
 
@@ -112,6 +117,30 @@ public class EncounterUI : MonoBehaviour
         }
 
         animateTextCoroutineRef = null;
+    }
+
+    public IEnumerator BattleWonCoroutine(string message, float secondsPerCharacter = 0.1f)
+    {
+        // Reset message and print character by character
+        encounterText.text = "";
+        for (int currentCharacter = 0; currentCharacter < message.Length; currentCharacter++)
+        {
+            encounterText.text += message[currentCharacter];
+            yield return new WaitForSeconds(secondsPerCharacter);
+        }
+
+        animateTextCoroutineRef = null;
+
+        // Send player after battle over message is done
+        yield return new WaitForSeconds(2.0f);
+
+        if (PlayerBehaviour.bosses == 0)
+            SceneManager.LoadScene("WinScene");
+        else
+        {
+            PlayerBehaviour.keys += Random.RandomRange(1, 3);
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     public void AnimateHealthBars(ICharacter player, ICharacter enemy)

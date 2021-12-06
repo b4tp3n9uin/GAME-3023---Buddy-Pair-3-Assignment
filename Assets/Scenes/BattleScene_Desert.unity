@@ -1240,7 +1240,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
     - target: {fileID: 7369288330045194273, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Scorpion
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330045194279, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_RootOrder
