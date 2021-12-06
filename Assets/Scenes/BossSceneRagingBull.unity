@@ -1339,8 +1339,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330717384955, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369288330717384955, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369288330717384955, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369288330717384955, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369288330808435769, guid: 46fccf8c15d524d41b136bf6cf825dd4, type: 3}
       propertyPath: m_LocalScale.x
@@ -1420,3 +1432,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2b5e26acb6854abf8fbe4d004e649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7789127566743797524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789127566743797521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b1d2159bf23844ca679eb14c86f6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectClips:
+  - {fileID: 8300000, guid: 78c4fda0ce53cca479abba127a0fd7a6, type: 3}
+  - {fileID: 8300000, guid: 7aaec84078b2d1b44a3fade5e2dbc7f0, type: 3}
+  - {fileID: 8300000, guid: ca402138233bca84b994bd0f24c0789d, type: 3}
+  - {fileID: 8300000, guid: 791239a7274198242bf049207b802f28, type: 3}
+  - {fileID: 8300000, guid: 5dfb5965b9a96504db98b077c25dae67, type: 3}
+  availableSources: 2
