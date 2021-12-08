@@ -10,9 +10,18 @@ public class ButtonScript : MonoBehaviour
     public GameObject CreditsPannel;
     bool isInventoryActive;
 
+
+    private string playerLocationSaveKey = "KaiLocation";
+
     void Start()
     {
         isInventoryActive = false;
+    }
+
+    public void OnNewGameButtonPressed()
+    {
+        ResetPlayerLocation();
+        OnPlayButtonPressed();
     }
 
     public void OnPlayButtonPressed() // Press play
@@ -62,5 +71,17 @@ public class ButtonScript : MonoBehaviour
             CreditsPannel.SetActive(false);
 
     }
-    
+
+    public void ResetPlayerLocation()
+    {
+        // Save the Player's location (x, y, z)
+        string playerLocation = "";
+
+        playerLocation += (-1.0f) + ",";
+        playerLocation += (0) + ",";
+        playerLocation += (0) + ",";
+
+        PlayerPrefs.SetString(playerLocationSaveKey, playerLocation);
+    }
+
 }
