@@ -59,6 +59,7 @@ public class EncounterInstance : MonoBehaviour
         if (enemy == null)
             enemy = FindObjectOfType<AICharacter>();
 
+        UpdateHealthBars();
         currentCharacterTurn = player;
         currentCharacterTurn.TakeTurn(this);
     }

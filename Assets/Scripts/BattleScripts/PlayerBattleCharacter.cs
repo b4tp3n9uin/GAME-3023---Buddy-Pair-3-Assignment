@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum ConsumableAbilities
 {
-    PowerBeam = 0,
+    PowerBeam = 1,
     Heal = 2,
     Shield = 3
 }
@@ -40,8 +40,6 @@ public class PlayerBattleCharacter : ICharacter
         opponent = encounter.Enemy;
         myEncounter = encounter;
         Debug.Log("Player Taking turn");
-
-        encounter.UpdateHealthBars();
     }
 
     public void UseAbility(int slot)
