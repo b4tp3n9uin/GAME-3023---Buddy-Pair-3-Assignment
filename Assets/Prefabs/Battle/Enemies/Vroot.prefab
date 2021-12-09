@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6794423080619070204}
-  - component: {fileID: 6794423080619070203}
   - component: {fileID: 6059260399197360709}
   - component: {fileID: 2186676152255897883}
   - component: {fileID: 2186676152255897884}
   - component: {fileID: 2186676152255897885}
+  - component: {fileID: -1577580282668708051}
   m_Layer: 0
   m_Name: Vroot
   m_TagString: Untagged
@@ -37,28 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6794423080619070203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6794423080619070202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe04f88b03c2bfb4ca55a4bb9385a4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
-  hpBar: {fileID: 0}
-  abilities:
-  - {fileID: 11400000, guid: 80834e6d6a09beb49808077257e91be9, type: 2}
-  - {fileID: 11400000, guid: f094b60655427174dbc7a1705923ed95, type: 2}
-  - {fileID: 11400000, guid: 814cea025d94cf94ebc438a4c5c55699, type: 2}
-  - {fileID: 11400000, guid: 45fa7122928d04f4fba581ab01ea3b3c, type: 2}
-  attack: 1
-  animator: {fileID: 0}
 --- !u!114 &6059260399197360709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +102,28 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7aaec84078b2d1b44a3fade5e2dbc7f0, type: 3}
   - {fileID: 8300000, guid: 9e5e5fc9ebc6e154db631242bd8aaa29, type: 3}
   availableSources: 3
+--- !u!114 &-1577580282668708051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794423080619070202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ce4c61607181748993b7f32a254758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  hpBar: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 80834e6d6a09beb49808077257e91be9, type: 2}
+  - {fileID: 11400000, guid: f094b60655427174dbc7a1705923ed95, type: 2}
+  - {fileID: 11400000, guid: 814cea025d94cf94ebc438a4c5c55699, type: 2}
+  - {fileID: 11400000, guid: 45fa7122928d04f4fba581ab01ea3b3c, type: 2}
+  attack: 1
+  animator: {fileID: 2186676152255897883}
 --- !u!1 &6794423081935959779
 GameObject:
   m_ObjectHideFlags: 0

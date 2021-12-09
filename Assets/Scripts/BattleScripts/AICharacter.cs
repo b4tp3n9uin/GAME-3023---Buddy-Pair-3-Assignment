@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class AICharacter : ICharacter
 {
-    private PlayerBattleCharacter player;
-    AICharacter enemySelf;
+    protected PlayerBattleCharacter player;
 
     [SerializeField]
-    private Animator animator;
+    protected Animator animator;
 
     protected override void Awake()
     {
@@ -22,8 +21,6 @@ public class AICharacter : ICharacter
 
         if (animator == null)
             animator = GetComponent<Animator>();
-
-        enemySelf = GetComponent<AICharacter>();
     }
 
     public override void TakeTurn(EncounterInstance encounter)
@@ -50,11 +47,12 @@ public class AICharacter : ICharacter
         encounter.AdvanceTurns(ability);
     }
 
-    private Ability ChooseMove()
+    protected virtual Ability ChooseMove()
     {
+        // Default Enemy Behaviour (If not using custom enemy script)
+
         // Create weighting for abilities
         float[] weights = new float[4];
-        float[] thresholds = new float[4];
 
         for (int i = 0; i < abilities.Count; i++)
         {
@@ -63,14 +61,6 @@ public class AICharacter : ICharacter
 
         int randSelector = Random.Range(0, abilities.Count);
         var chosenAbility = abilities[randSelector];
-        
-        // When the Enemy is above 80% health, it will attack because it's most logical ability rather than healing or skiping.
-        if (enemySelf.currentHealth > 80)
-        {
-            chosenAbility = abilities[0];
-
-            return chosenAbility;
-        }
 
         // decide ability to use
         return chosenAbility;

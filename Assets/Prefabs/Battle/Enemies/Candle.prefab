@@ -173,9 +173,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4616754306933339109}
-  - component: {fileID: 4616754306933339106}
   - component: {fileID: 5354343885454177115}
   - component: {fileID: 5354343885454177116}
+  - component: {fileID: 2530418761870270927}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -199,27 +199,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4616754306933339106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4616754306933339107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe04f88b03c2bfb4ca55a4bb9385a4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
-  hpBar: {fileID: 0}
-  abilities:
-  - {fileID: 11400000, guid: 7971f22a86be14f4dbcb9fbf51fd51c9, type: 2}
-  - {fileID: 11400000, guid: e2a1d7942c9bd794087124bc3ef3d6c9, type: 2}
-  - {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
-  attack: 1
-  animator: {fileID: 0}
 --- !u!95 &5354343885454177115
 Animator:
   serializedVersion: 3
@@ -255,3 +234,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 21d229c7e72480a46aaa6717d684b9c6, type: 3}
   - {fileID: 8300000, guid: 79fa3cda97dc38e42965e0723e6536bb, type: 3}
   availableSources: 1
+--- !u!114 &2530418761870270927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616754306933339107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad52e8d90cde6c4e8236151ca0c7f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  hpBar: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 7971f22a86be14f4dbcb9fbf51fd51c9, type: 2}
+  - {fileID: 11400000, guid: e2a1d7942c9bd794087124bc3ef3d6c9, type: 2}
+  - {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
+  attack: 1
+  animator: {fileID: 5354343885454177115}

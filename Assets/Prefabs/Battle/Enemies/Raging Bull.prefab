@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4747811463757798547}
-  - component: {fileID: 4747811463757798548}
   - component: {fileID: 5458344808160322471}
   - component: {fileID: 2857364562171731126}
   - component: {fileID: 2857364562171731127}
   - component: {fileID: 2857364562171731120}
+  - component: {fileID: -3292118518892851098}
   m_Layer: 0
   m_Name: Raging Bull
   m_TagString: Untagged
@@ -37,27 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4747811463757798548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4747811463757798549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe04f88b03c2bfb4ca55a4bb9385a4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
-  hpBar: {fileID: 0}
-  abilities:
-  - {fileID: 11400000, guid: dacd1e1b780e3414a9629040ea6e2bdb, type: 2}
-  - {fileID: 11400000, guid: f7b4ac2655c9083418021bf172b2ba85, type: 2}
-  - {fileID: 11400000, guid: 49b5aded6ccaeba42a8e167d24499d20, type: 2}
-  attack: 1
-  animator: {fileID: 0}
 --- !u!114 &5458344808160322471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +103,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 791239a7274198242bf049207b802f28, type: 3}
   - {fileID: 8300000, guid: 5dfb5965b9a96504db98b077c25dae67, type: 3}
   availableSources: 2
+--- !u!114 &-3292118518892851098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4747811463757798549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8cd978ad8be5c45a9ac4555c640cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  hpBar: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: dacd1e1b780e3414a9629040ea6e2bdb, type: 2}
+  - {fileID: 11400000, guid: f7b4ac2655c9083418021bf172b2ba85, type: 2}
+  - {fileID: 11400000, guid: 49b5aded6ccaeba42a8e167d24499d20, type: 2}
+  attack: 1
+  animator: {fileID: 2857364562171731126}
 --- !u!1 &4747811465235156033
 GameObject:
   m_ObjectHideFlags: 0

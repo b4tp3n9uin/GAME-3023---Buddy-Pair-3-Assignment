@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7369288330045194279}
-  - component: {fileID: 7369288330045194272}
   - component: {fileID: 8842980383773601070}
   - component: {fileID: 7789127566743797523}
+  - component: {fileID: 681458458045991755}
   m_Layer: 0
   m_Name: Scorpion
   m_TagString: Untagged
@@ -35,27 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7369288330045194272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369288330045194273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe04f88b03c2bfb4ca55a4bb9385a4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
-  hpBar: {fileID: 0}
-  abilities:
-  - {fileID: 11400000, guid: aa3e1efa0478e9a44a7ac9714db60cb8, type: 2}
-  - {fileID: 11400000, guid: e2a1d7942c9bd794087124bc3ef3d6c9, type: 2}
-  - {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
-  attack: 1
-  animator: {fileID: 0}
 --- !u!95 &8842980383773601070
 Animator:
   serializedVersion: 3
@@ -91,6 +70,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4420ed6932bf0984a86a84c54d74dced, type: 3}
   - {fileID: 8300000, guid: 79fa3cda97dc38e42965e0723e6536bb, type: 3}
   availableSources: 1
+--- !u!114 &681458458045991755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369288330045194273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad52e8d90cde6c4e8236151ca0c7f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  hpBar: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: aa3e1efa0478e9a44a7ac9714db60cb8, type: 2}
+  - {fileID: 11400000, guid: e2a1d7942c9bd794087124bc3ef3d6c9, type: 2}
+  - {fileID: 11400000, guid: 8070fa37cff39af44ad4405c1b4f6458, type: 2}
+  attack: 1
+  animator: {fileID: 8842980383773601070}
 --- !u!1 &7369288330717384949
 GameObject:
   m_ObjectHideFlags: 0
