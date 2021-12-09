@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EncounterBattleBehaviour : MonoBehaviour
@@ -14,8 +15,22 @@ public class EncounterBattleBehaviour : MonoBehaviour
     private float tryEncounterTime = 0.5f;
     private float timeElapsed = 0.0f;
 
+    [Header("Battle Scene Information")]
+    [SerializeField]
+    private Sprite backgroundImage;
+
+    [SerializeField]
+    private List<GameObject> encounterableEnemies;
+
+    [SerializeField]
+    private Vector2 playerSaveOffset = Vector2.zero;
+
     [SerializeField]
     private string battleScene = "BattleScene";
+
+    [SerializeField]
+    private AudioClip music;
+
 
     private PlayerBehaviour player;
     private bool playerCanEncounter = false;
@@ -52,8 +67,9 @@ public class EncounterBattleBehaviour : MonoBehaviour
                 // Save Player Location
                 player.SavePlayerLocation(0.0f, 0.0f);
 
-                // Transition to Battle Scene
-                SceneManager.LoadScene(battleScene);
+                // Load Battle Scene
+                LoadBattleScene();
+
             }
             else
             {
@@ -70,6 +86,29 @@ public class EncounterBattleBehaviour : MonoBehaviour
             }
         }
         
+    }
+
+    public void LoadBattleScene()
+    {
+        // Save Player's Location with an Offset
+        player.SavePlayerLocation(playerSaveOffset.x, playerSaveOffset.y);
+
+        // Set the background image
+        BattleSceneHandler.backgroundImage = backgroundImage;
+
+        // Set the Enemy Character
+        // NOTE: If you have multiple enemy characters, choose a random one
+        int index = Random.Range(0, encounterableEnemies.Count);
+        BattleSceneHandler.enemyCharacter = encounterableEnemies[index];
+
+        // Set Music to play
+        BattleSceneHandler.musicToPlay = music;
+
+        // Load Player's Abilities
+        // BattleSceneHandler.playerAbilities
+
+        // Transition to Battle Scene
+        SceneManager.LoadScene(battleScene);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

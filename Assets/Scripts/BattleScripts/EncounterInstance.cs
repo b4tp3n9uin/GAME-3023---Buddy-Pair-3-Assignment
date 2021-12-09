@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EncounterInstance : MonoBehaviour
 {
@@ -15,12 +17,23 @@ public class EncounterInstance : MonoBehaviour
         private set { player = value; }
     }
 
+    [Header("Encounter Information")]
     [SerializeField]
-    private AICharacter enemy;
+    private Transform EnemySpawnPosition;
+    [SerializeField]
+    private AudioSource musicSource;
+    [SerializeField]
+    private Image backgroundImage;
+    [SerializeField]
+    private TextMeshProUGUI enemyNametext;
+
+    private GameObject enemyCharacter;
+
+    private AICharacter enemyAI;
     public AICharacter Enemy
     {
-        get { return enemy; }
-        private set { enemy = value; }
+        get { return enemyAI; }
+        private set { enemyAI = value; }
     }
 
     [SerializeField]
@@ -38,10 +51,7 @@ public class EncounterInstance : MonoBehaviour
     public UnityEvent<ICharacter, ICharacter> onHPChange;
     public UnityEvent<Ability> onTriedAbilityOutOfUses;
     public UnityEvent<ICharacter> onWinBattle;
-
-    // Turn counter
-    private int turnNumber = 0;
-
+    
     // This is a reference to keep track of our coroutine
     private IEnumerator turnCoroutine = null;
 
@@ -55,13 +65,26 @@ public class EncounterInstance : MonoBehaviour
         if (player == null)
             player = FindObjectOfType<PlayerBattleCharacter>();
 
-        // Randomize the Enemy if it is not already put in
-        if (enemy == null)
-            enemy = FindObjectOfType<AICharacter>();
+        // Set Background Image
+        backgroundImage.sprite = BattleSceneHandler.backgroundImage;
 
+        // Set Enemy Character to enemy passed in from Random Encounter Script
+        enemyCharacter = Instantiate(BattleSceneHandler.enemyCharacter, EnemySpawnPosition);
+        enemyCharacter.name = BattleSceneHandler.enemyCharacter.name;
+        enemyAI = enemyCharacter.GetComponent<AICharacter>();
+
+        // Set Name Card
+        enemyNametext.text = enemyCharacter.name;
+
+        // Update initial health and set to player's turn.
         UpdateHealthBars();
         currentCharacterTurn = player;
         currentCharacterTurn.TakeTurn(this);
+
+        // Play correct music
+        musicSource.Stop();
+        musicSource.clip = BattleSceneHandler.musicToPlay;
+        musicSource.Play();
     }
 
     public void AdvanceTurns(Ability abilityUsed)
@@ -76,8 +99,6 @@ public class EncounterInstance : MonoBehaviour
 
         turnCoroutine = HandleTurn(abilityUsed);
         StartCoroutine(turnCoroutine);
-
-        turnNumber++;
     }
 
     public void UsedAbiliyOutOfUses(Ability abilityUsed)
@@ -99,7 +120,7 @@ public class EncounterInstance : MonoBehaviour
         if (currentCharacterTurn == player)
         {
             onPlayerTurnEnd.Invoke(player);
-            currentCharacterTurn = enemy;
+            currentCharacterTurn = enemyAI;
 
             // Wait for ability time
             yield return new WaitForSeconds(abilityTime);
@@ -124,13 +145,13 @@ public class EncounterInstance : MonoBehaviour
             SceneManager.LoadScene("GameOverScene");
         }
 
-        if (enemy.Health <= 0) // Win Battle.
+        if (enemyAI.Health <= 0) // Win Battle.
         {
             // Save Player's Health
             player.SaveHealth();
 
             // Trigger on Win battle event
-            onWinBattle.Invoke(enemy);
+            onWinBattle.Invoke(enemyAI);
         }
         else
         {

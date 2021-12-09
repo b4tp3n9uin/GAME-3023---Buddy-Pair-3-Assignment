@@ -10,6 +10,7 @@ TagManager:
   - GiantOwl
   - RagingBull
   - Vroot
+  - Boss
   layers:
   - Default
   - TransparentFX

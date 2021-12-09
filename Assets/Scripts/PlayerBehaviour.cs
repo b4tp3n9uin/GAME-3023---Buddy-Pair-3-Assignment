@@ -167,22 +167,28 @@ public class PlayerBehaviour : MonoBehaviour
         float XdistanceAway = -3.5f;
         float YdistanceAway = -5.0f; // float value for the Distance away from boss, so you don't constantly collide and go to battle scene.
 
-        // Go into Battle with Boss.
-        if (other.gameObject.CompareTag("GiantOwl"))
+        // Load the battle scene for the boss
+        if (other.gameObject.CompareTag("Boss"))
         {
-            SceneManager.LoadScene("BossSceneGiantOwl");
-            SavePlayerLocation(0.0f, YdistanceAway);
+            other.gameObject.GetComponent<EncounterBattleBehaviour>().LoadBattleScene();
         }
-        if (other.gameObject.CompareTag("RagingBull"))
-        {
-            SceneManager.LoadScene("BossSceneRagingBull");
-            SavePlayerLocation(0.0f,YdistanceAway);
-        }
-        if (other.gameObject.CompareTag("Vroot"))
-        {
-            SceneManager.LoadScene("BossSceneVroot");
-            SavePlayerLocation(XdistanceAway, 0.0f);
-        }
+
+        //// Go into Battle with Boss.
+        //if (other.gameObject.CompareTag("GiantOwl"))
+        //{
+        //    SceneManager.LoadScene("BossSceneGiantOwl");
+        //    SavePlayerLocation(0.0f, YdistanceAway);
+        //}
+        //if (other.gameObject.CompareTag("RagingBull"))
+        //{
+        //    SceneManager.LoadScene("BossSceneRagingBull");
+        //    SavePlayerLocation(0.0f,YdistanceAway);
+        //}
+        //if (other.gameObject.CompareTag("Vroot"))
+        //{
+        //    SceneManager.LoadScene("BossSceneVroot");
+        //    SavePlayerLocation(XdistanceAway, 0.0f);
+        //}
     }
     
     private void OnTriggerExit2D(Collider2D other)
