@@ -3,13 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-public enum ConsumableAbilities
-{
-    PowerBeam = 1,
-    Heal = 2,
-    Shield = 3
-}
+using TMPro;
 
 public class PlayerBattleCharacter : ICharacter
 {
@@ -18,6 +12,11 @@ public class PlayerBattleCharacter : ICharacter
 
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private GameObject buttonPrefab;
+    [SerializeField]
+    private GameObject buttonArea;
 
     public string overworldScene = "GameScene";
 
@@ -32,7 +31,32 @@ public class PlayerBattleCharacter : ICharacter
                 hpBar = item;
         }
 
+        // Load Player's health
         LoadHealth();
+
+        // Load Player's abilities
+        LoadAbilities();
+        
+    }
+
+    private void LoadAbilities()
+    {
+        // Get the Abilities
+        abilities = BattleSceneHandler.playerAbilities;
+
+        // Load the abilities into buttons
+        for (int i = 0; i < abilities.Count; i++)
+        {
+            // Create a new Button, add to button area
+            var abilityButton = Instantiate(buttonPrefab, buttonArea.transform);
+
+            // Rename button, change on click event
+            abilityButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = abilities[i].name;
+
+            int index = i;
+            abilityButton.GetComponent<Button>().onClick.AddListener(delegate { UseAbility(index); });
+
+        }
     }
 
     public override void TakeTurn(EncounterInstance encounter)
@@ -47,35 +71,24 @@ public class PlayerBattleCharacter : ICharacter
         // Check if ability has uses
         bool choseUseableAbility = true;
 
-        switch (slot)
+        // If using the uses and consumable slots from the ability script
+        //if (abilities[slot].isConsumable && abilities[slot].usesRemaining <= 0)
+        //{
+        //    choseUseableAbility = false;
+        //}
+
+        // This is using the static ints found in the PlayerBehaviour Script
+        if (abilities[slot].name == "PowerBeam" && PlayerBehaviour.powerUse <= 0)
         {
-            case (int)ConsumableAbilities.PowerBeam:
-
-                if (PlayerBehaviour.powerUse <= 0)
-                {
-                    Debug.Log("No More Power Use");
-                    choseUseableAbility = false;
-                }
-
-                break;
-            case (int)ConsumableAbilities.Heal:
-
-                if (PlayerBehaviour.healUse <= 0)
-                {
-                    Debug.Log("Out of Heal Use!");
-                    choseUseableAbility = false;
-                }
-                break;
-            case (int)ConsumableAbilities.Shield:
-
-                if (PlayerBehaviour.shieldUse <= 0)
-                {
-                    Debug.Log("Out of Shield Use!");
-                    choseUseableAbility = false;
-                }
-                break;
-            default:
-                break;
+            choseUseableAbility = false;
+        }
+        else if (abilities[slot].name == "EatFood" && PlayerBehaviour.healUse <= 0)
+        {
+            choseUseableAbility = false;
+        }
+        else if (abilities[slot].name == "AuraShield" && PlayerBehaviour.shieldUse <= 0)
+        {
+            choseUseableAbility = false;
         }
 
         // If the chosen ability has uses

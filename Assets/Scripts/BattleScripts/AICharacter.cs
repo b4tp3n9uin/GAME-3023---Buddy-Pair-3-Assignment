@@ -56,12 +56,12 @@ public class AICharacter : ICharacter
         float[] weights = new float[4];
         float[] thresholds = new float[4];
 
-        for (int i = 0; i < abilities.Length; i++)
+        for (int i = 0; i < abilities.Count; i++)
         {
             weights[i] = 0.25f;
         }
 
-        int randSelector = Random.RandomRange(0, abilities.Length);
+        int randSelector = Random.Range(0, abilities.Count);
         var chosenAbility = abilities[randSelector];
         
         // When the Enemy is above 80% health, it will attack because it's most logical ability rather than healing or skiping.

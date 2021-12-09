@@ -8,11 +8,6 @@ public class InventoryText : MonoBehaviour
 
     public TMPro.TextMeshProUGUI InventoryCount;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

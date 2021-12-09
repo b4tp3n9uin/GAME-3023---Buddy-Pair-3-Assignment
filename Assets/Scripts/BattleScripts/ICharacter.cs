@@ -50,7 +50,8 @@ public abstract class ICharacter : MonoBehaviour
 
     [Header("Abilities")]
     [SerializeField]
-    protected Ability[] abilities;
+    protected List<Ability> abilities;
+
     [SerializeField]
     [Range(0.1f, 10.0f)]
     protected float attack;

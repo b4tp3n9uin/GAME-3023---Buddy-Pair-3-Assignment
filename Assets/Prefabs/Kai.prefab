@@ -201,7 +201,19 @@ MonoBehaviour:
   speed: 5
   animatior: {fileID: 0}
   direction: 0
+  maxAbilities: 3
+  acquiredAbilities:
+  - {fileID: 11400000, guid: 71b970d16b461404a9334d447b8344e9, type: 2}
+  - {fileID: 11400000, guid: 90190f0b0d93ebe4ca11976b48de33c6, type: 2}
+  - {fileID: 11400000, guid: e083a7315f9c371419b68775c12c66c8, type: 2}
+  - {fileID: 11400000, guid: 7002152fa89945743a5af3ad632fcf78, type: 2}
   keyText: {fileID: 0}
+  bossText: {fileID: 0}
+  OnGrass: 0
+  isWalking: 0
+  GiantOwl: {fileID: 0}
+  RagingBull: {fileID: 0}
+  Vroot: {fileID: 0}
 --- !u!50 &3908641928015997706
 Rigidbody2D:
   serializedVersion: 4

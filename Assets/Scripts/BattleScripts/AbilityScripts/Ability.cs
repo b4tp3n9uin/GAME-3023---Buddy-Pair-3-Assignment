@@ -13,13 +13,47 @@ public class Ability : ScriptableObject
     private string description;
 
     [SerializeField]
+    private bool consumable;
+
+    public bool isConsumable
+    {
+        get
+        {
+            return consumable;
+        }
+    }
+
+    [SerializeField]
+    private int uses;
+
+    public int usesRemaining
+    {
+        get
+        {
+            return uses;
+        }
+    }
+
+
+    [SerializeField]
     private IEffect[] effects;
 
     public void Cast(ICharacter self, ICharacter other)
     {
-        foreach (IEffect effect in effects)
+        // If the ability either is NOT consumable or if it has uses
+        if (!isConsumable || uses > 0)
         {
-            effect.Apply(self, other);
+            if (isConsumable)
+            {
+                // Subtract from remaining uses
+                uses--;
+            }
+            
+            // Apply Effects
+            foreach (IEffect effect in effects)
+            {
+                effect.Apply(self, other);
+            }
         }
     }
 }

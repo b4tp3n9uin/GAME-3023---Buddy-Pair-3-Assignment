@@ -105,7 +105,7 @@ public class EncounterBattleBehaviour : MonoBehaviour
         BattleSceneHandler.musicToPlay = music;
 
         // Load Player's Abilities
-        // BattleSceneHandler.playerAbilities
+        BattleSceneHandler.playerAbilities = player.acquiredAbilities;
 
         // Transition to Battle Scene
         SceneManager.LoadScene(battleScene);
