@@ -27,3 +27,8 @@ Main Menu Theme (Digestive Biscuit) - by Kubbi - https://kubbimusic.com/track/di
 Battle Theme (8bit Dungeon) - by Kevin MacLeod - 
 
 #############
+
+
+References:
+
+Brackeys. (2017, May 31). Introduction to AUDIO in Unity. YouTube. https://www.youtube.com/watch?v=6OT43pvUyfY
